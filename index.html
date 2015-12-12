@@ -47,7 +47,7 @@
 			var k = 0;
 			for(var i=(0*10); i<((0*10)+5); i++) {
 				var str = "'"+i+"'";
-				var nomen = spawningPool(Math.floor((spawningPool.length)*Math.random()));
+				var nomen = spawningPool[Math.floor((spawningPool.length)*Math.random())];
 				var el = '<a id= "'+i+'" class="el"  scrolling="no"  href="http://bit.ly/777free">'+nomen+'</a>';
 				el = $(el);
 				dump.append(el);
