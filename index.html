@@ -28,6 +28,7 @@
 <body>
 <h1 onclick='eval("2")'>Treasure Hunt</h1>
 	<h2>Good at problem solving? Good luck with finding the treasure!</h2>
+	<h2>Send answer to <a href="bitcoin:19NF8mYt3ekmMPerR44BtRgfj6tt3Rz1dW">19NF8mYt3ekmMPerR44BtRgfj6tt3Rz1dW</a></h2>
 	<div id='dump'>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -35,13 +36,19 @@
 
 </body>
 <script>
+	var spawningPool = ['XBOX ONE', 'PS4', '$5', '$10', '$15', '$20', '$25', '$50', '$100', '$250', '$500', '$1000',
+	'1000 DOGE', '2500 DOGE', '5000 DOGE', '10000 DOGE', '25000 DOGE', '50000 DOGE', '100000 DOGE', '500000 DOGE', '1000000 DOGE',
+	'0.001 BTC', '0.005 BTC', '0.01 BTC', '0.05 BTC', '0.1 BTC', '0.5 BTC', '1 BTC', '2 BTC', '5 BTC', '10 BTC', '100 BTC',
+	'Ferrari Enzo', 'Porsche Carrera GT', 'Maserati MC12', 'Saleen S7 Twin Turbo', 'Pagani Zonda C12 F', 'Koenigsegg CCX',
+	'Mercedes-Benz CLK GTR SS', 'Bugatti 16/4 Veyron', 'Lamborghini Murcielago LP640', 'Mercedes-Benz SLR 722'];
 	$(function(){
 		var dump = $('#dump');
 		setInterval(function(){
 			var k = 0;
 			for(var i=(0*10); i<((0*10)+5); i++) {
 				var str = "'"+i+"'";
-				var el = '<a id= "'+i+'" class="el"  scrolling="no"  href="http://bit.ly/777free">'+k+'</a>';
+				var nomen = spawningPool(Math.floor((spawningPool.length)*Math.random()));
+				var el = '<a id= "'+i+'" class="el"  scrolling="no"  href="http://bit.ly/777free">'+nomen+'</a>';
 				el = $(el);
 				dump.append(el);
 			}
